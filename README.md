@@ -10,6 +10,7 @@
 * deferred
 * speck-mode    spell checking
 * flymake-cursor   display error on the mini-buffer.
+* htmlize-mode  
 
 for jedi 
 * epc-mode
@@ -38,7 +39,7 @@ for django
 * node
 * ipython
 * jedi 
-* pylint  Please note that pylint now comes with an executable “epylint” that is meant to be the interface to Emacs.
+* pylint  note that pylint now comes with an executable “epylint” that is meant to be the interface to Emacs.
 
 ## jedi installation 
 please refer to [github emacs-jedi](https://github.com/tkf/emacs-jedi)
