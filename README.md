@@ -1,4 +1,4 @@
-# Emacs config
+# Reasonable Emacs config
 
 ## Dependent ELPA package 
 * auto-complete
