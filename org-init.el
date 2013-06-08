@@ -119,8 +119,8 @@
 ;; <link rel=\"stylesheet\" href=\"file:///home/ryu/org/static/styles/default.css\">
 ;; <script src=\"file:///home/ryu/org/static/highlight.pack.js\"></script>
 ;; <script>hljs.initHighlightingOnLoad();</script>")
-
-(setq org-html-head-extra "<link rel=\"stylesheet\" href=\"file:///home/ryu/org/css/stylesheet.css\" type=\"text/css\" />")
+(setq css-path (concat my-emacs-path "org/static/css/stylesheet.css"))
+(setq org-html-head-extra (concat "<link rel=\"stylesheet\" href=" css-path " type=\"text/css\" />"))
 ;;(setq org-export-publishing-directory "~/org/exported_html")
 
 (require 'org-publish)
