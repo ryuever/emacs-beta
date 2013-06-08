@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: {% block %}...{% endblock %}
+# key: block
+# --
+{% block $1 %}
+  $0
+{% endblock %}

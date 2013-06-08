@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_src ruby...#+end_src
+# key: 8br
+# --
+#+begin_src ruby
+$0
+#+end_src

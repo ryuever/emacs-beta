@@ -1,0 +1,10 @@
+# contributor: ryu
+# name: #+begin_html.ul..#+end_html
+# key: 8sp
+# --
+#+begin_html
+$1
+<ul>
+<li>$0</li>
+</ul>
+#+end_html

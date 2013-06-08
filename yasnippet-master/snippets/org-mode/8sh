@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_src sh...#+end_src
+# key: 8sh
+# --
+#+begin_src sh
+$0
+#+end_src

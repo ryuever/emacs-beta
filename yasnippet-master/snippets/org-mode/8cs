@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+BEGIN_SRC css...#+END_SRC
+# key: 8cs
+# --
+#+BEGIN_SRC css
+$0
+#+END_SRC

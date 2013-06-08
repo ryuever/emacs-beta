@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_src emacs-lisp...#+end_src
+# key: 8bl
+# --
+#+begin_src emacs-lisp
+$0
+#+end_src

@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_example...#+end_example
+# key: 8be
+# --
+#+begin_example
+$0
+#+end_example
