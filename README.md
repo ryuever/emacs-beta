@@ -7,16 +7,16 @@
 * org-mode
 * color-theme
 * python-mode 
-* deferred
 * speck-mode    spell checking
 * flymake-cursor   display error on the mini-buffer.
 * htmlize-mode  
+* ecb-mode
 
 for jedi 
 * epc-mode
+* jedi-mode
 * jump 
 * deferred
-* flymake-python
 
 can't load file "inf-ruby"
 * inf-ruby
