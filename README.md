@@ -16,7 +16,7 @@ for jedi
 * epc-mode
 * jedi-mode
 * jump 
-* deferred
+* deferred (shipped with epc-mode)
 
 can't load file "inf-ruby"
 * inf-ruby
