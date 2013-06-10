@@ -22,4 +22,5 @@
      	  (lambda () (rinari-launch)))
 ;; scss mode for .scss file
 (autoload 'scss-mode "scss-mode")
+(setq scss-compile-at-save nil) ;; disable the auto-compilation
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
