@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+BEGIN_SRC ruby...#+END_SRC
+# key: 8rb
+# --
+#+BEGIN_SRC ruby -n -r
+$0
+#+END_SRC

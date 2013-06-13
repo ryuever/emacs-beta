@@ -3,21 +3,15 @@
 
 (define-abbrev-table 'Custom-mode-abbrev-table '())
 
-(define-abbrev-table 'awk-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'awk-mode-abbrev-table '())
 
 (define-abbrev-table 'bibtex-mode-abbrev-table '())
 
 (define-abbrev-table 'bookmark-bmenu-mode-abbrev-table '())
 
-(define-abbrev-table 'c++-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c++-mode-abbrev-table '())
 
-(define-abbrev-table 'c-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c-mode-abbrev-table '())
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
@@ -47,13 +41,14 @@
     ("coundnt" "coundn't" nil 2)
     ("didnt" "didn't" nil 0)
     ("doesnt" "doesn't" nil 2)
-    ("dont" "don't" nil 2)
+    ("dont" "don't" nil 3)
+    ("havent" "haven't" nil 0)
     ("iam" "I'm" nil 2)
     ("id" "I'd" nil 0)
     ("ill" "I'll" nil 2)
     ("im" "I'm" nil 0)
     ("ima" "I'm" nil 0)
-    ("its" "It's" nil 4)
+    ("its" "It's" nil 6)
     ("ive" "I’ve" nil 0)
     ("ones" "one's" nil 0)
     ("ryu" "ryuyutyo" nil 0)
@@ -81,9 +76,7 @@
 
 (define-abbrev-table 'jade-mode-abbrev-table '())
 
-(define-abbrev-table 'java-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'java-mode-abbrev-table '())
 
 (define-abbrev-table 'js-mode-abbrev-table '())
 
@@ -97,9 +90,7 @@
 
 (define-abbrev-table 'nodejs-repl-mode-abbrev-table '())
 
-(define-abbrev-table 'objc-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'objc-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
@@ -122,9 +113,7 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'pike-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'pike-mode-abbrev-table '())
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 

@@ -2,6 +2,6 @@
 # name: #+begin_html...#+end_html
 # key: 8bh
 # --
-#+begin_html
+#+begin_html -n -r
 $0
 #+end_html

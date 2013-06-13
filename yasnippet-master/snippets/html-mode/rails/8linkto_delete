@@ -1,0 +1,7 @@
+# contributor: youchao liu
+# name: <%= link_to , ,:confirm,:method  %>
+# key: 8linkto
+# --
+<%= link_to '$1', $0, 
+                  :confirm => 'Are you sure?',
+                  :method => :delete %>

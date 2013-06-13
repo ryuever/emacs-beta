@@ -2,6 +2,6 @@
 # name: #+begin_src python...#+end_src
 # key: 8bp
 # --
-#+begin_src python
+#+begin_src python -n -r
 $0
 #+end_src

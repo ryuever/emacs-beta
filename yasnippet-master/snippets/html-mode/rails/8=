@@ -1,0 +1,7 @@
+# contributor: youchao liu
+# name: <%= $0 %>
+# key: 8=
+# --
+<%= $1 %>
+
+<% end %>
