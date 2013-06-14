@@ -13,4 +13,4 @@
 ;;ecb
 (require 'ecb-autoloads)
 
-(setq ecb-auto-activate t)
+(setq ecb-layout-name "left15")
