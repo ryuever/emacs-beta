@@ -35,6 +35,9 @@ for django
 * jade-mode 
 * sws-mode
 
+for html
+* nxhtml
+
 ## Dependent libraries
 * node
 * ipython

@@ -16,3 +16,6 @@ This works on the current region."
     (while (search-forward ">" nil t) (replace-match "&gt;" nil t))
     )
   )
+
+;; nxhtml
+(load "~/.emacs.d/nxhtml-master/autostart.el")
