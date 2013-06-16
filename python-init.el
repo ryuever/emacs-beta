@@ -26,6 +26,9 @@
       (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pylint-init)))
 
+;; I want to use flymake only for .py files. and disable it for the rest. 
+;; but It is always enabled. now disable flymake to html file.
+(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
 ;; flymake to be activated automatically
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 ;;**********************************************************************
