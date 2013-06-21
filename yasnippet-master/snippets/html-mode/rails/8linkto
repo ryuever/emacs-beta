@@ -1,5 +1,0 @@
-# contributor: youchao liu
-# name: <%= link_to '$1'  %>
-# key: 8linkto
-# --
-<%= link_to '$1' %>
