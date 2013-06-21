@@ -19,6 +19,6 @@ This works on the current region."
 ;;**********************************************************************
 ;; nxhtml
 ;;**********************************************************************
-(load "~/.emacs.d/nxhtml-master/autostart.el")
+;;(load "~/.emacs.d/nxhtml-master/autostart.el")
 ;; disable background color
-(setq mumamo-background-colors nil)
+;;(setq mumamo-background-colors nil)

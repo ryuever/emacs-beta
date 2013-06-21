@@ -1,0 +1,7 @@
+# contributor: youchao liu
+# name: <select name="$1" id="$2">
+# key: select
+# --
+<select name="$1" id="$2">
+  <option value="$3">$4</option>
+</select>

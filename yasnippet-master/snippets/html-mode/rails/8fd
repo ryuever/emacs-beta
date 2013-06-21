@@ -1,0 +1,7 @@
+# contributor: youchao liu
+# name: <%= fields_for $1 do $2 %>
+# key: 8fd
+# --
+<%= fields_for $1 do $2 %>
+  $0  
+<% end %>

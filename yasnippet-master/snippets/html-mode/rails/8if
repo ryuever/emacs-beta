@@ -1,0 +1,7 @@
+# contributor: youchao liu
+# name: <%= if $1 %>
+# key: 8if
+# --
+<% if $1 %>
+  $0  
+<% end %>
