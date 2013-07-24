@@ -22,7 +22,6 @@
 (add-hook 'scheme-mode-hook 'my-common-mode-auto-pair)
 (add-hook 'sql-mode-hook 'my-common-mode-auto-pair)
 (add-hook 'emacs-lisp-mode-hook 'my-common-mode-auto-pair)
-(add-hook 'text-mode-hook 'my-common-mode-auto-pair)
 (add-hook 'slime-repl-mode-hook 'my-common-mode-auto-pair)
 ;;specified for js-mode. i don't want {} auto-pair,it's annoying badly
 (defun my-common-mode-auto-pair2 ()
@@ -49,3 +48,7 @@
 (add-hook 'js2-mode-hook 'my-common-mode-auto-pair2)
 (add-hook 'org-mode-hook 'my-common-mode-auto-pair2)
 (add-hook 'ruby-mode-hook 'my-common-mode-auto-pair2)
+;; some modes will use text-mode-hook as default.for example latex-mode, if 
+;; you use latex-mode-hook to replace below statement, as a result, we can't 
+;; get the corresponding close part automatically.
+(add-hook 'text-mode-hook 'my-common-mode-auto-pair2)
