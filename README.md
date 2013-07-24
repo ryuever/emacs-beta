@@ -38,6 +38,9 @@ for django
 for html
 * nxhtml
 
+for latex
+* auctex
+
 ## Dependent libraries
 * node
 * ipython
