@@ -16,6 +16,7 @@
 (load "ruby-init")
 (load "yasnippet-init")
 (load "speck-init")
+(load "latex-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************

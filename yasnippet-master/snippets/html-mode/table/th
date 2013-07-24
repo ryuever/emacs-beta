@@ -2,4 +2,4 @@
 # name: <th>...</th>
 # key: th
 # --
-<th$1>$2</th>
+<th>$2</th>

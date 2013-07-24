@@ -65,3 +65,6 @@
 ;;be enabled for all windows at startup by putting in the InitFile the following line
 ;;**********************************************************************
 ;;(add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
+
+
+

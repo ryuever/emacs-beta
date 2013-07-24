@@ -2,4 +2,4 @@
 # name: <td>...</td>
 # key: td
 # --
-<td$1>$2</td>
+<td>$2</td>

@@ -1,0 +1,5 @@
+# contributor: youchao liu
+# name: <button class="$1">
+# key: button
+# --
+<button class="$1">$0</button>
