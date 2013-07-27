@@ -75,7 +75,7 @@ Emacs buffers are those whose name starts with *."
   (interactive)
   (insert ";;")
   (let ((i 0))
-	(while (< i 70)
+	(while (< i 85)
 	  (insert "*")
 	  (setq i (+ i 1))))
   )

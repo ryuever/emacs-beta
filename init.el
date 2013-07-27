@@ -17,6 +17,7 @@
 (load "yasnippet-init")
 (load "speck-init")
 (load "latex-init")
+(load "flymake-init")
 ;;************************************************************************
 ;; add my own alias for productivity.
 ;;************************************************************************
