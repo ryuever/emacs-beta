@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+begin_src c++...#+end_src
+# key: 8bc
+# --
+#+begin_src c++ -n -r
+$0
+#+end_src
