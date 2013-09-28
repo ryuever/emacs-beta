@@ -172,6 +172,25 @@
          :publishing-directory "~/public_html/english/"
          :publishing-function org-publish-attachment)
         
+        ("8000-oral-english-notes"
+         :base-directory "~/org/8000-oral-english/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/public_html/8000-oral-english/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("English-static"
+         :base-directory "~/org/8000-oral-english/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/public_html/8000-oral-english/"
+         :publishing-function org-publish-attachment)
+
         ("Japanese-notes"
          :base-directory "~/org/japanese/"
          :auto-sitemap t
