@@ -65,3 +65,9 @@
   )
 (add-hook 'outline-minor-mode-hook 'outline-binding)
 
+;;*************************************************************************************
+;; bond the function fullscreen to f11
+;;*************************************************************************************
+;;(add-hook 'org-mode-hook (lambda()
+;;  		    (local-set-key (kbd "<f11>") 'fullscreen)))
+(global-set-key [f11] 'fullscreen)
