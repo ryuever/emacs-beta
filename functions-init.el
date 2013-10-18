@@ -159,3 +159,11 @@ by using nxml's indentation rules."
   "Show the full path file name in the minibuffer."
   (interactive)
   (message (buffer-file-name)))
+
+;;*************************************************************************************
+;; full screen
+;;*************************************************************************************
+(defun fullscreen ()
+  (interactive)
+  (set-frame-parameter nil 'fullscreen
+                       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
