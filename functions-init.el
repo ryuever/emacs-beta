@@ -167,3 +167,22 @@ by using nxml's indentation rules."
   (interactive)
   (set-frame-parameter nil 'fullscreen
                        (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+
+;;*************************************************************************************
+;; select text in quote which is from http://ergoemacs.org/emacs/modernization_mark-word.html
+;;*************************************************************************************
+(defun select-text-in-quote ()
+  "Select text between the nearest left and right delimiters.
+Delimiters are paired characters:
+ () [] {} «» ‹› “”
+ For practical purposes, also: \"\", but not single quotes."
+ (interactive)
+ (let (p1)
+   (skip-chars-backward "^<>([{“\"")
+   (setq p1 (point))
+   (skip-chars-forward "^<>)]}”\"")
+   (set-mark p1)
+   )
+ )
+
+(global-set-key (kbd "M-*") 'select-text-in-quote)
