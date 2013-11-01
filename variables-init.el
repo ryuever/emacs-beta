@@ -70,3 +70,9 @@
 ;; open a windows layout when you input command "M-x gdb"
 ;;*************************************************************************************
 (setq gdb-many-windows t) 
+
+;;*************************************************************************************
+;; solve the issue "Command attempted to use minibuffer while in minibuffer"
+;; when you type command M-x query-replace-regexp RET C-x 8 RET 000a RET f 
+;;*************************************************************************************
+(setq enable-recursive-minibuffers t)
