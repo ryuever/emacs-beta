@@ -8,7 +8,10 @@
 (load "face-init")
 (load "functions-init")
 (load "html-init")
+
+;; If you run emacs in shell, ibus no need to setup.
 (load "ibus-init")
+
 (load "js2-init")
 (load "lookup-init")
 (load "org-init")
