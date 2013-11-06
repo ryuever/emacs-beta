@@ -22,6 +22,7 @@
 ;; after the upgrade to emacs 24.3.1, speck will cause "invalid timer" error
 ;;(load "speck-init")
 
+(load "aspell-init")
 (load "latex-init")
 (load "flymake-init")
 ;;************************************************************************

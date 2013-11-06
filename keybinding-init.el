@@ -43,11 +43,7 @@
 ;;************************************************************************
 (add-hook 'shell-mode-hook (lambda()
   		    (local-set-key (kbd "<f5>") 'recenter-top-bottom)))
-;;************************************************************************
-;; speck,  aspell and ispell is not a prerequisite
-;;************************************************************************
-(global-set-key (kbd "<f8>") 'speck-popup-menu-at-point)
-(global-set-key (kbd "C-S-+") 'speck-add-word)
+
 
 (global-set-key [M-left] 'windmove-left)
 (global-set-key [M-right] 'windmove-right)
