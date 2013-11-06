@@ -1,13 +1,21 @@
-(require 'color-theme)
- (eval-after-load "color-theme"
-    '(progn
-       (color-theme-initialize)
-       (color-theme-oswald)))
+;; (require 'color-theme)
+;;  (eval-after-load "color-theme"
+;;     '(progn
+;;        (color-theme-initialize)
+;;        (color-theme-oswald)))
+
 ;;(color-theme-hober)
 ;;(color-theme-oswald)
 ;;(color-theme-comidia)
 ;;(color-theme-gnome2)
 ;;(color-theme-classic)
+
+;;(require 'color-theme-twilight)
+;;(require 'color-theme-approximate)
+;;(require 'color-theme-github)
+;;(require 'color-theme-solarized)
+;;(require 'solarized-dark-theme)
+;;(require 'solarized-light-theme)
 
 (add-to-list 'custom-theme-load-path (concat home-path "/.emacs.d/theme/"))
 ;;(load-theme 'solarized-dark t)
