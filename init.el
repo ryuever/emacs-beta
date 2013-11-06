@@ -15,7 +15,10 @@
 (load "python-init")
 (load "ruby-init")
 (load "yasnippet-init")
-(load "speck-init")
+
+;; after the upgrade to emacs 24.3.1, speck will cause "invalid timer" error
+;;(load "speck-init")
+
 (load "latex-init")
 (load "flymake-init")
 ;;************************************************************************
@@ -26,4 +29,3 @@
 ;; setup for emacs font 
 ;;**********************************************************************
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-
