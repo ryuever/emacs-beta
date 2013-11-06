@@ -71,3 +71,12 @@
 ;;(add-hook 'org-mode-hook (lambda()
 ;;  		    (local-set-key (kbd "<f11>") 'fullscreen)))
 (global-set-key [f11] 'fullscreen)
+
+;;*************************************************************************************
+;; temp fix the issue when you use emacs in shell "M-RET" will be scanned as M-j/C-M-j
+;;*************************************************************************************
+(add-hook 'org-mode-hook (lambda()
+  		    (local-set-key (kbd "M-j") 'org-insert-heading)))
+
+(add-hook 'org-mode-hook (lambda()
+  		    (local-set-key (kbd "C-M-j") 'org-insert-heading)))
