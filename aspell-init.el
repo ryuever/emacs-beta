@@ -1,8 +1,9 @@
 (setq ispell-program-name "aspell")
 (setq ispell-personal-dictionary "~/git/emacs.d/aspell.en.pws")
 
-(setq text-mode-hook '(lambda()
-                        (flymode t)))
+;; (setq text-mode-hook '(lambda()
+;;                         (flymode t)))
+
 ;;(setq ispell-process-directory (expand-file-name "~/git/"))
 
 ;;(setq ispell-personal-dictionary "~/Ubuntu One/aspell.en.pws")
@@ -12,6 +13,11 @@
 ; change Aspell process directory (aspell.en.prepl path)
 ;;(setq ispell-process-directory "~/Ubuntu One/")
 
+;;*************************************************************************************
+;; automatic open flyspell mode 
+;;*************************************************************************************
+;; (dolist (hook '(text-mode-hook))
+;;       (add-hook hook (lambda () (flyspell-mode 1))))
 ;;*************************************************************************************
 ;; easy spell check
 ;;*************************************************************************************
