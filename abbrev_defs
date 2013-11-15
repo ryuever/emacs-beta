@@ -63,6 +63,11 @@
     ("wont" "won't" nil 1)
     ("wouldnt" "wouldn't" nil 2)
     ("youre" "you're" nil 0)
+    ("alpha" "α" nil 0)
+    ("beta" "β" nil 0)
+    ("delta" "δ" nil 0)
+    ("gamma" "γ" nil 0)
+    ("delta" "ϵ" nil 0)    
    ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
