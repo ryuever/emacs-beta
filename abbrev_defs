@@ -3,15 +3,21 @@
 
 (define-abbrev-table 'Custom-mode-abbrev-table '())
 
-(define-abbrev-table 'awk-mode-abbrev-table '())
+(define-abbrev-table 'awk-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'bibtex-mode-abbrev-table '())
 
 (define-abbrev-table 'bookmark-bmenu-mode-abbrev-table '())
 
-(define-abbrev-table 'c++-mode-abbrev-table '())
+(define-abbrev-table 'c++-mode-abbrev-table
+  '(
+   ))
 
-(define-abbrev-table 'c-mode-abbrev-table '())
+(define-abbrev-table 'c-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
@@ -27,6 +33,8 @@
 
 (define-abbrev-table 'dig-mode-abbrev-table '())
 
+(define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
+
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
@@ -37,12 +45,16 @@
     ("8ep" "emacs/emacs-plugin/" nil 0)
     ("8ryum" "ryuforever@163.com" nil 0)
     ("8toram" "ryuyutyo@toralab.org" nil 0)
+    ("alpha" "α" nil 0)
+    ("beta" "β" nil 0)
     ("cant" "can't" nil 4)
     ("couldnt" "couldn't" nil 0)
     ("coundnt" "coundn't" nil 2)
+    ("delta" "ϵ" nil 0)
     ("didnt" "didn't" nil 0)
     ("doesnt" "doesn't" nil 3)
     ("dont" "don't" nil 4)
+    ("gamma" "γ" nil 0)
     ("havent" "haven't" nil 0)
     ("iam" "I'm" nil 2)
     ("id" "I'd" nil 0)
@@ -63,11 +75,6 @@
     ("wont" "won't" nil 1)
     ("wouldnt" "wouldn't" nil 2)
     ("youre" "you're" nil 0)
-    ("alpha" "α" nil 0)
-    ("beta" "β" nil 0)
-    ("delta" "δ" nil 0)
-    ("gamma" "γ" nil 0)
-    ("delta" "ϵ" nil 0)    
    ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
@@ -86,7 +93,9 @@
 
 (define-abbrev-table 'jade-mode-abbrev-table '())
 
-(define-abbrev-table 'java-mode-abbrev-table '())
+(define-abbrev-table 'java-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'js-mode-abbrev-table '())
 
@@ -100,7 +109,9 @@
 
 (define-abbrev-table 'nodejs-repl-mode-abbrev-table '())
 
-(define-abbrev-table 'objc-mode-abbrev-table '())
+(define-abbrev-table 'objc-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
@@ -123,7 +134,9 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'pike-mode-abbrev-table '())
+(define-abbrev-table 'pike-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
