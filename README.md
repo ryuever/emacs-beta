@@ -52,3 +52,6 @@ please refer to [github emacs-jedi](https://github.com/tkf/emacs-jedi)
 
 ## resense installation 
 please refer to [emacs-install-resense](http://blog.10rane.com/tech/2013/03/26/emacs-install-rsense/)
+
+## Description
+* you should put .emacs file under ~/ 
