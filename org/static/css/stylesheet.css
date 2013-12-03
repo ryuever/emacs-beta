@@ -783,3 +783,8 @@ td, th {
     font-weight: bold;
   }
 
+
+/* customized by ryu */
+.figure {
+    width: 50%;
+}
