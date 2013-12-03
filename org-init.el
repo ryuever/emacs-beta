@@ -1,4 +1,10 @@
+;;*************************************************************************************
+;; org mode export
+;;*************************************************************************************
+(setq org-startup-with-inline-images 1)     // will inlined display image when you open a file
+;;*************************************************************************************
 ;; use Org-mode as the default mode for all README files
+;;*************************************************************************************
 (add-to-list 'auto-mode-alist '("README$" . org-mode))
 (setq org-src-fontify-natively t)
 ;; below two variables is used to solve the issue when export to a html file
