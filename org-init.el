@@ -1,7 +1,7 @@
 ;;*************************************************************************************
 ;; org mode export
 ;;*************************************************************************************
-(setq org-startup-with-inline-images 1)     ;; will inlined display image when you open a file
+(setq org-startup-with-inline-images 1)     // will inlined display image when you open a file
 ;;*************************************************************************************
 ;; use Org-mode as the default mode for all README files
 ;;*************************************************************************************
