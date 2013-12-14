@@ -1,0 +1,7 @@
+# contributor: ryu
+# name: #+BEGIN_SRC LATEX...#+END_SRC
+# key: 8la
+# --
+#+BEGIN_SRC latex -n -r
+$0
+#+END_SRC
