@@ -52,6 +52,16 @@
 ; Setup zenify, we tell appt to use window, and replace default function
 (setq appt-display-format 'window)
 ;;(setq appt-disp-window-function (function my-appt-disp-window))
+
+;;*************************************************************************************
+;; resolve idle time,  “resolve” the time you were away 
+;;*************************************************************************************
+;; Emacs will alert a window to query what to do after 15 minutes of no operation on 
+;; computer which means you are away.
+(setq org-clock-idle-time 15)
+;; (setq org-clock-persist 'history)
+;; (org-clock-persistence-insinuate)
+;; (setq org-clock-persist t)
 ;;************************************************************************
 ;;org-keywords
 ;;************************************************************************
