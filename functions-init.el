@@ -186,3 +186,55 @@ Delimiters are paired characters:
  )
 
 (global-set-key (kbd "M-*") 'select-text-in-quote)
+;;*************************************************************************************
+;; Used for converting your chinese birthday date to the date in Gregorian form or 
+;; reminding you 7 or 14 days before the given chinese birthday. Part is based on the codes 
+;; in cal-china-x.el and calendar.el
+;;*************************************************************************************
+(defun cal-china-x-birthday-from-chinese (lunar-month lunar-day)
+  "Return birthday date this year in Gregorian form.
+
+LUNAR-MONTH and LUNAR-DAY are date number used in Chinese lunar
+calendar."
+  (interactive "nlunar month: \nnlunar day: ")
+  (let* ((birthday-chinese (list lunar-month lunar-day))
+         (current-chinese-date (calendar-chinese-from-absolute
+                                (calendar-absolute-from-gregorian
+                                 (calendar-current-date))))
+         (cycle (car current-chinese-date))
+         (year (cadr current-chinese-date))
+         (birthday-chinese-full `(,cycle ,year ,@birthday-chinese))
+         (birthday-gregorian-full (calendar-gregorian-from-absolute
+                                   (calendar-chinese-to-absolute
+                                    birthday-chinese-full))))
+    (message "Your next birthday in Gregorian is on %s"
+             (calendar-date-string birthday-gregorian-full))))
+
+(defun remind-chinese-birthday(lunar-month lunar-day)
+  "Remind a chinese birthday, if today is your birthday or 7,14 days before your chinese birthday.
+
+LUNAR-MONTH and LUNAR-DAY are date number used in Chinese lunar
+calendar."
+  (interactive "nlunar month: \nnlunar day: ")
+  (let* ((current-chinese-date-14 (calendar-chinese-from-absolute 
+                                   (+ (calendar-absolute-from-gregorian date) 14)))
+                                   ;; (+ (calendar-absolute-from-gregorian (calendar-current-date)) 14)))
+         (current-chinese-date-07 (calendar-chinese-from-absolute 
+                                   (+ (calendar-absolute-from-gregorian date) 07)))
+                                   ;; (+ (calendar-absolute-from-gregorian (calendar-current-date)) 07)))
+         (current-chinese-date (calendar-chinese-from-absolute 
+                                   (calendar-absolute-from-gregorian date)))
+         (current-chinese-date-exclude-cycle-14 (cddr current-chinese-date-14))
+         (current-chinese-date-exclude-cycle-07 (cddr current-chinese-date-07))
+         (current-chinese-date-exclude-cycle (cddr current-chinese-date)))
+    (if(not (set-exclusive-or current-chinese-date-exclude-cycle-14
+                              (list lunar-month lunar-day)))
+        ;; (format  "Reminder: Only 2 weekes until %s" (eval entry))
+        (format  "Reminder: Only 2 weekes until %s" entry)
+      (if (not (set-exclusive-or current-chinese-date-exclude-cycle-07 
+                               (list lunar-month lunar-day)))
+          (format  "Reminder: Only 2 weekes until %s" entry)
+        (if (not (set-exclusive-or current-chinese-date-exclude-cycle
+                               (list lunar-month lunar-day)))
+            (format  "Reminder: Today is %s" entry)))
+      )))
