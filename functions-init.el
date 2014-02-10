@@ -233,7 +233,7 @@ calendar."
         (format  "Reminder: Only 2 weekes until %s" entry)
       (if (not (set-exclusive-or current-chinese-date-exclude-cycle-07 
                                (list lunar-month lunar-day)))
-          (format  "Reminder: Only 2 weekes until %s" entry)
+          (format  "Reminder: Only 1 week until %s" entry)
         (if (not (set-exclusive-or current-chinese-date-exclude-cycle
                                (list lunar-month lunar-day)))
             (format  "Reminder: Today is %s" entry)))
