@@ -121,7 +121,7 @@ by using nxml's indentation rules."
          (myFileList
           (cond
            ((string-equal major-mode "dired-mode") (dired-get-marked-files))
-           (t (list (buffer-file-name))) ) ) )
+           (t (list (buffer-file-name))))))
 
     (setq doIt (if (<= (length myFileList) 5)
                    t
@@ -130,12 +130,13 @@ by using nxml's indentation rules."
     (when doIt
       (cond
        ((string-equal system-type "windows-nt")
-        (mapc (lambda (fPath) (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" fPath t t)) ) myFileList)
+        (mapc (lambda (fPath) (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" fPath t t))) myFileList)
         )
        ((string-equal system-type "darwin")
         (mapc (lambda (fPath) (shell-command (format "open \"%s\"" fPath)) )  myFileList) )
        ((string-equal system-type "gnu/linux")
-        (mapc (lambda (fPath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" fPath)) ) myFileList) ) ) ) ) )
+        (mapc (lambda (fPath) (let ((process-connection-type nil))
+                                (start-process "" nil "xdg-open" fPath))) myFileList))))))
 ;; The following shows the file in desktop.
 (defun ergoemacs-open-in-desktop ()
   "Show current file in desktop (OS's file manager)."
@@ -146,7 +147,7 @@ by using nxml's indentation rules."
    ((string-equal system-type "darwin") (shell-command "open ."))
    ((string-equal system-type "gnu/linux")
     (let ((process-connection-type nil)) (start-process "" nil "xdg-open" "."))
-    ;; (shell-command "xdg-open .") ;; 2013-02-10 this sometimes froze emacs till the folder is closed. ⁖ with nautilus
+    ;; (shell-command "xdg-open .") ;; 2013-02-10 this sometimes froze emacs till the folder is closed. with nautilus
     ) ))
 
 (defun th-find-file-sudo (file)
@@ -208,6 +209,33 @@ calendar."
                                    (calendar-chinese-to-absolute
                                     birthday-chinese-full))))
     (message "Your next birthday in Gregorian is on %s"
+             (calendar-date-string birthday-gregorian-full))))
+
+(defun cal-date-from-chinese (lunar-month lunar-day &optional year)
+  "Return birthday date this year in Gregorian form.
+   In addition. it could be used to calculate Chinese date to Gregorian format.
+
+LUNAR-MONTH and LUNAR-DAY are date number used in Chinese lunar calendar.
+year is a Gregorian format, the current year as default."
+
+  (interactive (list
+                (string-to-number (read-string (format "Lunar month: ") nil nil nil))
+                (string-to-number (read-string (format "Lunar day: ") nil nil nil))
+                (string-to-number (read-string (format "Gregorian year: ") 
+                                               nil nil (car (last (calendar-current-date)))))))
+
+  (let* ((birthday-chinese (list lunar-month lunar-day))
+         (interval (if year (- year (car (last (calendar-current-date)))) 0))
+         (current-chinese-date (calendar-chinese-from-absolute
+                                (calendar-absolute-from-gregorian
+                                 (calendar-current-date))))
+         (cycle (car current-chinese-date))
+         (year (+ interval (cadr current-chinese-date)))
+         (birthday-chinese-full `(,cycle ,year ,@birthday-chinese))
+         (birthday-gregorian-full (calendar-gregorian-from-absolute
+                                   (calendar-chinese-to-absolute
+                                    birthday-chinese-full))))
+    (message "The corresponding Gregorian date to Chinese Date is on %s"
              (calendar-date-string birthday-gregorian-full))))
 
 (defun remind-chinese-birthday(lunar-month lunar-day)
