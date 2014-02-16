@@ -211,7 +211,7 @@ calendar."
     (message "Your next birthday in Gregorian is on %s"
              (calendar-date-string birthday-gregorian-full))))
 
-(defun cal-date-from-chinese (lunar-month lunar-day &optional year)
+(defun cal-date-from-lunar-date (lunar-month lunar-day &optional year)
   "Return birthday date this year in Gregorian form.
    In addition. it could be used to calculate Chinese date to Gregorian format.
 
@@ -235,7 +235,7 @@ year is a Gregorian format, the current year as default."
          (birthday-gregorian-full (calendar-gregorian-from-absolute
                                    (calendar-chinese-to-absolute
                                     birthday-chinese-full))))
-    (message "The corresponding Gregorian date to Chinese Date is on %s"
+    (message "The corresponding Gregorian date of Lunar Date is on %s"
              (calendar-date-string birthday-gregorian-full))))
 
 (defun remind-chinese-birthday(lunar-month lunar-day)
