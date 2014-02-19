@@ -44,15 +44,17 @@
 ;;**********************************************************************
 (setq temporary-file-directory "~/.emacs.d/emacs-backup-autosave/")
 (setq backup-directory-alist
-          `((".*" . ,temporary-file-directory)))
-    (setq auto-save-file-name-transforms
-          `((".*" ,temporary-file-directory t)))
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 ;;********************************************************************************
 ;; show file path
 ;;********************************************************************************
-(setq frame-title-format
-      (list (format "%s %%S: %%j " (system-name))
-        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+;; (setq frame-title-format
+;;       (list (format "%s %%S: %%j " (system-name))
+;;             '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
+(setq frame-title-format '("" "@Emacs " emacs-version " : %f %p" ))
 ;;**********************************************************************
 ;; have lines soft wrapped at word boundary?
 ;;**********************************************************************
