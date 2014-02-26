@@ -192,18 +192,22 @@ Delimiters are paired characters:
 ;; reminding you 7 or 14 days before the given chinese birthday. Part is based on the codes 
 ;; in cal-china-x.el and calendar.el
 ;;*************************************************************************************
-(defun cal-china-x-birthday-from-chinese (lunar-month lunar-day)
+(defun cal-china-x-birthday-from-chinese (lunar-month lunar-day &optional interval)
   "Return birthday date this year in Gregorian form.
+   In addition. it could be used to convert Chinese date to Gregorian format.
 
-LUNAR-MONTH and LUNAR-DAY are date number used in Chinese lunar
-calendar."
-  (interactive "nlunar month: \nnlunar day: ")
+LUNAR-MONTH and LUNAR-DAY are date number used in Chinese lunar calendar.
+INTERVAL is a identifier, 0 as default for the current year, 1 for the calculation of
+the next year, and so on."
+
+  (interactive "nlunar month: \nnlunar day: \nninterval: ")
   (let* ((birthday-chinese (list lunar-month lunar-day))
+         (interval (if (not interval) 0 interval))
          (current-chinese-date (calendar-chinese-from-absolute
                                 (calendar-absolute-from-gregorian
                                  (calendar-current-date))))
          (cycle (car current-chinese-date))
-         (year (cadr current-chinese-date))
+         (year (+ interval (cadr current-chinese-date)))
          (birthday-chinese-full `(,cycle ,year ,@birthday-chinese))
          (birthday-gregorian-full (calendar-gregorian-from-absolute
                                    (calendar-chinese-to-absolute
@@ -255,14 +259,26 @@ calendar."
          (current-chinese-date-exclude-cycle-14 (cddr current-chinese-date-14))
          (current-chinese-date-exclude-cycle-07 (cddr current-chinese-date-07))
          (current-chinese-date-exclude-cycle (cddr current-chinese-date)))
-    (if(not (set-exclusive-or current-chinese-date-exclude-cycle-14
-                              (list lunar-month lunar-day)))
-        ;; (format  "Reminder: Only 2 weekes until %s" (eval entry))
+    (if (and (eq (car current-chinese-date-exclude-cycle-14) lunar-month)
+             (eq (cadr current-chinese-date-exclude-cycle-14) lunar-day))
         (format  "Reminder: Only 2 weekes until %s" entry)
-      (if (not (set-exclusive-or current-chinese-date-exclude-cycle-07 
-                               (list lunar-month lunar-day)))
+      (if (and (eq (car current-chinese-date-exclude-cycle-07) lunar-month)
+             (eq (cadr current-chinese-date-exclude-cycle-07) lunar-day))
           (format  "Reminder: Only 1 week until %s" entry)
-        (if (not (set-exclusive-or current-chinese-date-exclude-cycle
-                               (list lunar-month lunar-day)))
-            (format  "Reminder: Today is %s" entry)))
-      )))
+        (if (and (eq (car current-chinese-date-exclude-cycle) lunar-month)
+             (eq (cadr current-chinese-date-exclude-cycle) lunar-day))
+          (format  "Reminder: Today is %s" entry))))))
+;; for below logic is used to verify whether two list are the same. but one issue : 
+;; for (3 10 2014), the corresponding lunar date is (02 10), After the processing 
+;; of set-exclusive-or (10 02) is also matched. We should make sure month-to-month
+;; day-to-day are the same. 
+    ;; (if(not (set-exclusive-or current-chinese-date-exclude-cycle-14
+    ;;                           (list lunar-month lunar-day)))
+    ;;     (format  "Reminder: Only 2 weekes until %s" entry)
+    ;;   (if (not (set-exclusive-or current-chinese-date-exclude-cycle-07 
+    ;;                            (list lunar-month lunar-day)))
+    ;;       (format  "Reminder: Only 1 week until %s" entry)
+    ;;     (if (not (set-exclusive-or current-chinese-date-exclude-cycle
+    ;;                            (list lunar-month lunar-day)))
+    ;;         (format  "Reminder: Today is %s" entry)))
+    ;;   )))
