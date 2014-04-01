@@ -8,6 +8,7 @@
 (load "face-init")
 (load "functions-init")
 (load "html-init")
+(load "c-init.el")
 
 ;; If you run emacs in shell, ibus no need to setup.
 (load "ibus-init")
@@ -33,3 +34,4 @@
 ;; setup for emacs font 
 ;;**********************************************************************
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
+(require 'calendar)
