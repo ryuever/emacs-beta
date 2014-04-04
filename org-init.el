@@ -69,6 +69,17 @@
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
 
+;; (setq org-todo-keywords
+;;       '((sequence "TODO(t)" "|" "DONE(d)")
+;;         (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+;;         (sequence "|" "CANCELED(c)")))
+
+;; (setq org-todo-keywords
+;;       '((sequence "TODO" "|" "DONE")
+;;         (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
+;;         (sequence "|" "CANCELED")
+;;         (type "Fred" "Sara" "Lucy" "|" "DONE")))
+
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
               ("NEXT" :foreground "blue" :weight bold)
@@ -93,6 +104,10 @@
 
 (setq org-directory "~/org")
 (setq org-default-notes-file "~/org/keep-maintain-plan/refile.org")
+
+(setq org-agenda-files (quote ("~/org/keep-maintain-plan/reading.org"
+                               "~/org/keep-maintain-plan/home.org"
+                               "~/org/keep-maintain-plan/refile.org")))
 
 (setq org-capture-templates
       (quote (("t" "todo" entry (file "~/org/keep-maintain-plan/refile.org")
@@ -142,31 +157,31 @@
 (require 'org-publish)
 (setq org-publish-project-alist
       '(
-        ("python_cookbook-inherit"
+        ("PythonCookbook-inherit"
          :base-directory "~/org/"
          :recursive t
          :base-extension "css\\|js"
-         :publishing-directory "~/public_html/python_cookbook/"
+         :publishing-directory "~/public_html/PythonCookbook/"
          :publishing-function org-publish-attachment
          )
 
-        ("python_cookbook-notes"
-         :base-directory "~/org/python_cookbook/"
+        ("PythonCookbook-notes"
+         :base-directory "~/org/PythonCookbook/"
          :auto-sitemap t
          :index-filename "sitemap.org"
          :index-title "Sitemap"
          :recursive t
          :base-extension "org"
-         :publishing-directory "~/public_html/python_cookbook/"
+         :publishing-directory "~/public_html/PythonCookbook/"
          :publishing-function org-html-publish-to-html
          :headline-levels 3
          :auto-preamble t
          )
-        ("python_cookbook-static"
-         :base-directory "~/org/python_cookbook/"
+        ("PythonCookbook-static"
+         :base-directory "~/org/PythonCookbook/"
          :recursive t
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/public_html/python_cookbook/"
+         :publishing-directory "~/public_html/PythonCookbook/"
          :publishing-function org-publish-attachment)
         
         ("English-notes"
@@ -225,8 +240,68 @@
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/public_html/japanese/"
          :publishing-function org-publish-attachment)
+
+        ("Compiler-notes"
+         :base-directory "~/org/compiler/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/public_html/compiler/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("Compiler-static"
+         :base-directory "~/org/compiler/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/public_html/compiler/"
+         :publishing-function org-publish-attachment)
+
+        ("Linux-notes"
+         :base-directory "~/org/linux/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/public_html/linux/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("Linux-static"
+         :base-directory "~/org/linux/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/public_html/linux/"
+         :publishing-function org-publish-attachment)
+
+        ("Emacs-notes"
+         :base-directory "~/org/emacs/"
+         :auto-sitemap t
+         :index-filename "sitemap.org"
+         :index-title "Sitemap"
+         :recursive t
+         :base-extension "org"
+         :publishing-directory "~/public_html/emacs/"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 3
+         :auto-preamble t
+         )
+        ("Emacs-static"
+         :base-directory "~/org/emacs/"
+         :recursive t
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/public_html/emacs/"
+         :publishing-function org-publish-attachment)
         
-        ("python_cookbook" :components ("python_cookbook-inherit" "python_cookbook-notes" "python_cookbook-static"))
+        ("PythonCookbook" :components ("PythonCookbook-inherit" "PythonCookbook-notes" "PythonCookbook-static"))
         ("Japanese" :components ("Japanese-notes" "Japanese-static"))
         ("English" :components ( "English-notes" "English-static"))
+        ("Compiler" :components ( "Compiler-notes" "Compiler-static"))
+        ("Linux" :components ( "Linux-notes" "Linux-static"))
+        ("Emacs" :components ( "Emacs-notes" "Emacs-static"))
         ))
